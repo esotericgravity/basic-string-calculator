@@ -9,7 +9,7 @@ def parse_calc(str):
             return a
         if str[i]=='-':
             try:
-                a=int(str[:i]) + int(str[i+1:])
+                a=int(str[:i]) - int(str[i+1:])
                 print(int(str[:i]))
             except ValueError:
                 a="invalid, string cannot be converted to integer."
@@ -28,6 +28,13 @@ def parse_calc(str):
             except ValueError:
                 a="invalid, string cannot be converted to integer."
             return a
+        if str[i]=='^':
+            try:
+                a=int(str[:i]) ** int(str[i+1:])
+                print(int(str[:i]))
+            except ValueError:
+                a="invalid, string cannot be converted to integer."
+            return a        
     return "invalid, string does not contain an operator"
 
 if __name__ == '__main__':
